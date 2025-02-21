@@ -1,12 +1,9 @@
 #include "analytical.hpp"
 #include "precision.hpp"
 #include "simulation.hpp"
-#include "utils.hpp"
 
-
-#include <iostream>
 #include <Eigen/Dense>
-#include <string>
+#include <iostream>
 #include <string_view>
 #include <vector>
 
