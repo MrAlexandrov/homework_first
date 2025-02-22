@@ -11,7 +11,9 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 find_package(Boost REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 
-add_executable(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/main.cpp)
+file(GLOB SRC_FILES "src/*.cpp")
+
+add_executable(${PROJECT_NAME} main.cpp ${SRC_FILES})
 
 # enable_testing()
 # add_subdirectory(${CMAKE_SOURCE_DIR}/tests)
