@@ -1,4 +1,5 @@
 #include "analytical.hpp"
+#include "grapher.hpp"
 #include "precision.hpp"
 #include "simulation.hpp"
 
@@ -35,10 +36,10 @@ std::vector<Type> CountError(const std::vector<Type>& lhs, const std::vector<Typ
     int n = lhs.size();
     std::vector<Type> result(n);
     std::transform(
-        lhs.cbegin(), lhs.cend(), 
+        lhs.cbegin(), lhs.cend(),
         rhs.cbegin(), result.begin(),
-        [](Type lhs, Type rhs) { 
-            return std::fabs(lhs - rhs); 
+        [](Type lhs, Type rhs) {
+            return std::fabs(lhs - rhs);
         }
     );
     return result;
@@ -55,6 +56,7 @@ int main(int argc, char** argv) {
     size_t N = 5;
     std::cin >> N;
     TMatrix P = GetTransitionMatrix(N);
+    NGrapher::TGrapher graph(P, "chain");
     NAnalitycal::TAnalyticalSolution analytic(P);
     NSimulation::TSimulationSolution simulate(P, Imitations, Iterations);
     std::vector<Type> analyticSolution = analytic.GetDistribution();
