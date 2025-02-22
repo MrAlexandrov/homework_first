@@ -38,7 +38,9 @@ private:
             for (size_t j = 0; j < n; ++j) {
                 if (P_(i, j) > 0) {
                     dotFile << "    S" << i << " -> S" << j
-                            << " [label=\"" << std::fixed << std::setprecision(2) << P_(i, j) << "\"];\n";
+                            << " [label=\"" << std::fixed << std::setprecision(2)
+                            << P_(i, j) << "\", penwidth="
+                            << (P_(i, j) * 5) << "];\n";
                 }
             }
         }
