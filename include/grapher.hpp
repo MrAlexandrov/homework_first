@@ -1,12 +1,12 @@
 #pragma once
 
-#include <Eigen/Dense>
+#include "types.hpp"
+
 #include <string>
 
 namespace NGrapher {
 
-using Type = double;
-using TMatrix = Eigen::Matrix<Type, Eigen::Dynamic, Eigen::Dynamic>;
+using namespace NTypes;
 
 class TGrapher{
 public:

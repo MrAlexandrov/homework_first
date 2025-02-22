@@ -1,13 +1,12 @@
 #pragma once
 
-#include <Eigen/Dense>
+#include "types.hpp"
+
 #include <vector>
 
 namespace NAnalitycal {
 
-using Type = double;
-using TVector = Eigen::Matrix<Type, Eigen::Dynamic, 1>;
-using TMatrix = Eigen::Matrix<Type, Eigen::Dynamic, Eigen::Dynamic>;
+using namespace NTypes;
 
 class TAnalyticalSolution final {
 public:

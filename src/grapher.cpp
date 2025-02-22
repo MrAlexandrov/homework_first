@@ -1,16 +1,11 @@
 #include "grapher.hpp"
 
-#include <Eigen/Dense>
 #include <string>
 #include <fstream>
 #include <iostream>
 #include <iomanip>
 
 namespace NGrapher {
-
-using Type = double;
-using TMatrix = Eigen::Matrix<Type, Eigen::Dynamic, Eigen::Dynamic>;
-
 
 TGrapher::TGrapher(const TMatrix& P, std::string filename = "default")
     : P_(P)

@@ -2,10 +2,6 @@
 
 namespace NAnalitycal {
 
-using Type = double;
-using TVector = Eigen::Matrix<Type, Eigen::Dynamic, 1>;
-using TMatrix = Eigen::Matrix<Type, Eigen::Dynamic, Eigen::Dynamic>;
-
 TAnalyticalSolution::TAnalyticalSolution(const TMatrix& P)
     : P_(P)
     , Distribution_(CalculateStationaryDistribution())

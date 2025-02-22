@@ -2,16 +2,11 @@
 
 #include "utils.hpp"
 
-#include <Eigen/Dense>
 #include <vector>
 #include <boost/asio.hpp>
 #include <thread>
 
 namespace NSimulation {
-
-using Type = double;
-using TVector = Eigen::Matrix<Type, Eigen::Dynamic, 1>;
-using TMatrix = Eigen::Matrix<Type, Eigen::Dynamic, Eigen::Dynamic>;
 
 using TThreadPool = boost::asio::thread_pool;
 

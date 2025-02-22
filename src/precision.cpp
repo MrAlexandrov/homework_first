@@ -5,7 +5,11 @@
 
 namespace NPrecision {
 
-TPrecision::TPrecision(std::ios_base::fmtflags oldFlags, std::streamsize oldPrecision, size_t newPrecision)
+TPrecision::TPrecision(
+    std::ios_base::fmtflags oldFlags, 
+    std::streamsize oldPrecision, 
+    size_t newPrecision
+)
     : Flags_(oldFlags)
     , Precision_(oldPrecision)
 {

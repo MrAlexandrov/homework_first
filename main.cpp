@@ -1,3 +1,4 @@
+#include "types.hpp"
 #include "analytical.hpp"
 #include "grapher.hpp"
 #include "precision.hpp"
@@ -8,8 +9,7 @@
 #include <string_view>
 #include <vector>
 
-using Type = double;
-using TMatrix = Eigen::Matrix<Type, Eigen::Dynamic, Eigen::Dynamic>;
+using namespace NTypes;
 
 TMatrix GetTransitionMatrix(int n) {
     TMatrix P(n, n);
