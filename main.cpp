@@ -56,7 +56,6 @@ int main(int argc, char** argv) {
     size_t N = 5;
     std::cin >> N;
     TMatrix P = GetTransitionMatrix(N);
-    NGrapher::TGrapher graph(P, "chain");
     NAnalitycal::TAnalyticalSolution analytic(P);
     NSimulation::TSimulationSolution simulate(P, Imitations, Iterations);
     std::vector<Type> analyticSolution = analytic.GetDistribution();
@@ -74,5 +73,6 @@ int main(int argc, char** argv) {
         PrintResults("Imitated distribution:", simulateSolution);
         PrintResults("Errors:", errors);
     }
+    NGrapher::TGrapher graph(P, "chain", analyticSolution);
     return 0;
 }
