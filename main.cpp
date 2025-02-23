@@ -28,7 +28,7 @@ void PrintResults(std::string_view text, const std::vector<Type>& results) {
     for (const auto& i : results) {
         std::cout << i << " ";
     }
-    std::cout << std::endl;
+    std::cout << "\n";
 }
 
 std::vector<Type> CountError(const std::vector<Type>& lhs, const std::vector<Type>& rhs) {
