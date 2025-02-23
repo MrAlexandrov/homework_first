@@ -1,6 +1,6 @@
 #include "types.hpp"
 #include "analytical.hpp"
-#include "grapher.hpp"
+#include "drawer.hpp"
 #include "precision.hpp"
 #include "simulation.hpp"
 
@@ -73,6 +73,6 @@ int main(int argc, char** argv) {
         PrintResults("Imitated distribution:", simulateSolution);
         PrintResults("Errors:", errors);
     }
-    NGrapher::TGrapher graph(P, "chain", analyticSolution);
+    NDrawer::TDrawer graph(P, "chain", analyticSolution);
     return 0;
 }
