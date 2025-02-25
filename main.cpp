@@ -73,6 +73,6 @@ int main(int argc, char** argv) {
         PrintResults("Imitated distribution:", simulateSolution);
         PrintResults("Errors:", errors);
     }
-    NDrawer::TDrawer graph(P, "chain", analyticSolution);
+    NDrawer::TDrawer::GenerateAndDrawGraph(P, "chain", analyticSolution);
     return 0;
 }
