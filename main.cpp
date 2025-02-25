@@ -2,7 +2,7 @@
 #include "analytical.hpp"
 #include "drawer.hpp"
 #include "precision.hpp"
-#include "simulation.hpp"
+#include "imitation.hpp"
 
 #include <Eigen/Dense>
 #include <iostream>
@@ -57,10 +57,10 @@ int main(int argc, char** argv) {
     std::cin >> N;
     TMatrix P = GetTransitionMatrix(N);
     NAnalitycal::TAnalyticalSolution analytic(P);
-    NSimulation::TSimulationSolution simulate(P, Imitations, Iterations);
+    NImitation::TImitationSolution imitated(P, Imitations, Iterations);
     std::vector<Type> analyticSolution = analytic.GetDistribution();
-    std::vector<Type> simulateSolution = simulate.GetDistribution();
-    std::vector<Type> errors = CountError(analyticSolution, simulateSolution);
+    std::vector<Type> imitatedSolution = imitated.GetDistribution();
+    std::vector<Type> errors = CountError(analyticSolution, imitatedSolution);
 
     {
         NPrecision::TPrecision changer(
@@ -70,7 +70,7 @@ int main(int argc, char** argv) {
         );
 
         PrintResults("Analytical distribution:", analyticSolution);
-        PrintResults("Imitated distribution:", simulateSolution);
+        PrintResults("Imitated distribution:", imitatedSolution);
         PrintResults("Errors:", errors);
     }
     NDrawer::TDrawer::GenerateAndDrawGraph(P, "chain", analyticSolution);
