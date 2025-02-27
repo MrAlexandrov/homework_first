@@ -53,13 +53,13 @@ int main(int argc, char** argv) {
     size_t Imitations = std::stoul(argv[1]);
     size_t Iterations = std::stoul(argv[2]);
 
-    size_t N = 5;
+    size_t N = 0;
     std::cin >> N;
     TMatrix P = GetTransitionMatrix(N);
     NAnalitycal::TAnalyticalSolution analytic(P);
     NImitation::TImitationSolution imitated(P, Imitations, Iterations);
-    std::vector<Type> analyticSolution = analytic.GetDistribution();
-    std::vector<Type> imitatedSolution = imitated.GetDistribution();
+    std::vector<Type> analyticSolution = analytic.CalculateAndGetDistribution();
+    std::vector<Type> imitatedSolution = imitated.ImitateAndGetDistribution();
     std::vector<Type> errors = CountError(analyticSolution, imitatedSolution);
 
     {
