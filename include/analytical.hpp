@@ -12,11 +12,12 @@ class TAnalyticalSolution final {
 public:
     TAnalyticalSolution(const TMatrix&);
     std::vector<Type> CalculateAndGetDistribution();
-    std::vector<Type> GetDistribution() const;
 
 private:
     void CalculateDistribution();
     TVector CalculateDistributionImpl() const;
+
+    std::vector<Type> GetDistribution() const;
 
 private:
     const TMatrix P_;
