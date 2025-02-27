@@ -4,7 +4,6 @@
 #include <vector>
 #include <boost/asio.hpp>
 #include <thread>
-#include <iostream>
 
 namespace NImitation {
 
@@ -51,7 +50,6 @@ void TImitationSolution::CalculateDistribution() {
     for (auto& state : Distribution_){
         state /= total;
     }
-    std::cout << std::endl;
 }
 
 std::vector<Type> TImitationSolution::GetDistribution() const {
