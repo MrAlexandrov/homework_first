@@ -5,15 +5,15 @@
 #include <string>
 #include <vector>
 
-namespace NGraph {
+namespace NChart {
 
 using namespace NTypes;
 
-class TGraph final {
+class TChart final {
 public:
-    TGraph() = default;
+    TChart() = default;
     template<typename T>
-    explicit TGraph(
+    explicit TChart(
         const std::vector<T>& data
         , const std::string& title = "default"
     );
@@ -33,7 +33,7 @@ private:
 };
 
 template<typename T>
-TGraph::TGraph(
+TChart::TChart(
     const std::vector<T>& data
     , const std::string& title
 ) 
@@ -43,7 +43,7 @@ TGraph::TGraph(
 }
 
 template<typename T>
-void TGraph::SetData(const std::vector<T>& data) {
+void TChart::SetData(const std::vector<T>& data) {
     Data_.clear();
     Data_.reserve(data.size());
     for (const auto& value : data) {
@@ -51,4 +51,4 @@ void TGraph::SetData(const std::vector<T>& data) {
     }
 }
 
-} // namespace NGraph
+} // namespace NChart

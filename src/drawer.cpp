@@ -12,7 +12,7 @@ namespace NDrawer {
 constexpr double PenWidthArrowMultiplyer = 5;
 constexpr double PenWidthNodeMultiplyer = 20;
 
-void TDrawer::GenerateAndDrawGraph(const TMatrix& P, std::string filename, const std::vector<Type>& probability) {
+void TDrawer::GenerateAndDrawChart(const TMatrix& P, std::string filename, const std::vector<Type>& probability) {
     GenerateDotFile(P, filename, probability);
     GenerateImage(filename);
 }

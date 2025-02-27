@@ -17,7 +17,7 @@
 using namespace NTypes;
 
 constexpr int POWER_VALUE = 100;
-constexpr int GRAPH_AMOUNT = 3;
+constexpr int CHART_AMOUNT = 3;
 
 TMatrix GetTransitionMatrix(int n) {
     TMatrix P(n, n);
@@ -136,16 +136,16 @@ int main(int argc, char** argv) {
         PrintResults("Standart Deviation:", standartDeviation);
     }
     // drawing chain
-    NDrawer::TDrawer::GenerateAndDrawGraph(P, "chain", analyticSolution);
+    NDrawer::TDrawer::GenerateAndDrawChart(P, "chain", analyticSolution);
 
-    // plotting graphic
-    NPlotter::TPlotter graphic("graphic");
+    // plotting chart
+    NPlotter::TPlotter chart("chart");
     std::vector<int> XValues(Iterations);
     std::iota(XValues.begin(), XValues.end(), 0);
-    graphic.SetXValues(XValues);
-    for (int i = 0; i < GRAPH_AMOUNT; ++i) {
-        graphic.EmplaceGraphic(states[i], std::to_string(i));
+    chart.SetXValues(XValues);
+    for (int i = 0; i < CHART_AMOUNT; ++i) {
+        chart.EmplaceChart(states[i], std::to_string(i));
     }
-    graphic.Plot();
+    chart.Plot();
     return 0;
 }

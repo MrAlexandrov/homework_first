@@ -14,7 +14,7 @@ private:
     TDrawer() = delete;
 
 public:
-    static void GenerateAndDrawGraph(const TMatrix& P, std::string filename, const std::vector<Type>& probability = {});
+    static void GenerateAndDrawChart(const TMatrix& P, std::string filename, const std::vector<Type>& probability = {});
 
 private:
     static void GenerateDotFile(const TMatrix& P, std::string filename, const std::vector<Type>& probability);

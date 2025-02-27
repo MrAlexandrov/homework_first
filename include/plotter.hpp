@@ -1,6 +1,6 @@
 #pragma once
 
-#include "graph.hpp"
+#include "chart.hpp"
 
 #include <cassert>
 #include <cstdio>
@@ -11,7 +11,7 @@
 namespace NPlotter {
 
 using namespace NTypes;
-using namespace NGraph;
+using namespace NChart;
 
 class TPlotter final {
 public:
@@ -20,7 +20,7 @@ public:
     void SetXValues(const std::vector<int>& values);
 
     template <typename T>
-    void EmplaceGraphic(
+    void EmplaceChart(
         const std::vector<T>& data
         , const std::string& title
     );
@@ -40,15 +40,15 @@ private:
     std::string CommandFile_;
     std::optional<int> DataSize_;
     std::vector<int> XValues_;
-    std::vector<TGraph> Graphs_;
+    std::vector<TChart> Charts_;
 };
 
 template <typename T>
-void TPlotter::EmplaceGraphic(
+void TPlotter::EmplaceChart(
     const std::vector<T>& data
     , const std::string& title
 ) {
-    Graphs_.emplace_back(
+    Charts_.emplace_back(
         std::forward<decltype(data)>(data)
         , std::forward<decltype(title)>(title)
     );

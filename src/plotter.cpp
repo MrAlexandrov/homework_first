@@ -48,8 +48,8 @@ void TPlotter::SaveDataToFile() const {
 
     for (int i = 0; i < DataSize_; ++i) {
         outFile << std::setw(12) << XValues_[i] << "\t";
-        for (const auto& graph : Graphs_) {
-            outFile << std::setw(12) << graph.GetData()[i] << "\t";
+        for (const auto& chart : Charts_) {
+            outFile << std::setw(12) << chart.GetData()[i] << "\t";
         }
         outFile << "\n";
     }
@@ -65,7 +65,7 @@ std::string TPlotter::GenerateGnuplotCommands() const {
     commands << "plot ";
 
     int index = 2;
-    for (const auto& data : Graphs_) {
+    for (const auto& data : Charts_) {
         commands
             << "'" << DataFile_ << "' using 1:"
             << index++ << " with linespoints title '"
